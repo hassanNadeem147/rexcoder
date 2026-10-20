@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101114">
+  <title>Rexcoder</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <a class="brand" href="./index.html" aria-label="Rexcoder home">
+          <span class="brand-mark" aria-hidden="true">R</span>
+          <span>Rexcoder</span>
+        </a>
+        <button class="icon-button mobile-close" id="close-sidebar" aria-label="Close sidebar">×</button>
+      </div>
+      <button class="new-thread" id="new-thread">
+        <span aria-hidden="true">＋</span>
+        <span>New conversation</span>
+        <kbd>Ctrl K</kbd>
+      </button>
+      <div class="sidebar-label">YOUR THREADS</div>
+      <nav class="thread-list" id="thread-list" aria-label="Conversations"></nav>
+      <div class="sidebar-bottom">
+        <span class="status-dot"></span>
+        <span>Local workspace</span>
+        <span class="sidebar-version">Rexcoder</span>
+      </div>
+    </aside>
+    <div class="sidebar-scrim" id="sidebar-scrim"></div>
+    <main class="main-panel">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="open-sidebar" aria-label="Open sidebar">☰</button>
+        <div class="topbar-context">
+          <span class="context-title" id="context-title">New conversation</span>
+          <span class="context-separator">/</span>
+          <span class="context-subtitle">AI coding workspace</span>
+        </div>
+        <div class="topbar-actions">
+          <span class="connection-indicator" id="connection-status"><span class="status-dot"></span> Ready</span>
+        </div>
+      </header>
+      <section class="conversation" id="conversation" aria-live="polite">
+        <div class="welcome" id="welcome">
+          <div class="welcome-orbit" aria-hidden="true"><span>R</span></div>
+          <p class="eyebrow">YOUR LOCAL AI CODING PARTNER</p>
+          <h1>What are we<br><span>building today?</span></h1>
+          <p class="welcome-copy">Ask a question, create something new, or work through a tricky bug.</p>
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="Explain how Python dictionaries work with a simple example."><span>✳</span> Explain a concept</button>
+            <button class="suggestion" data-prompt="Create a Python function that validates an email address."><span>⌘</span> Build something</button>
+            <button class="suggestion" data-prompt="Help me find and fix a bug in my code."><span>⌕</span> Fix an issue</button>
+          </div>
+        </div>
+        <div class="message-list" id="message-list"></div>
+      </section>
+      <footer class="composer-area">
+        <form class="composer" id="composer">
+          <label class="sr-only" for="message-input">Message Rexcoder</label>
+          <textarea id="message-input" rows="1" maxlength="20000" placeholder="Message Rexcoder..." required></textarea>
+          <div class="composer-footer">
+            <span class="composer-hint"><span class="sparkle">✦</span> Responses may need verification</span>
+            <div class="composer-controls">
+              <span class="key-hint">Enter to send</span>
+              <button class="send-button" id="send-button" type="submit" aria-label="Send message">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </form>
+        <p class="privacy-note">Your conversations are stored locally in this workspace.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
